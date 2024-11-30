@@ -8,6 +8,7 @@ import shutil
 import sys
 import zipfile
 import tempfile
+import lzma
 from pathlib import Path
 from argparse import ArgumentParser
 
