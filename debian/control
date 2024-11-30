@@ -10,7 +10,7 @@ Rules-Requires-Root: no
 #Vcs-Browser: https://salsa.debian.org/debian/zipu
 
 Package: zipu
-Architecture: any
+Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends},python3
 Description: Packing from https://github.com/Dragon2fly/ZipUnicode A very useful tool to uncompress files
