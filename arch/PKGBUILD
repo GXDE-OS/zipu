@@ -1,0 +1,25 @@
+# Maintainer: CharOfString <root@charofstring.cc>
+pkgname=zipu-git
+pkgver=1.0.0
+pkgrel=1
+pkgdesc='Extract ZIP archives whose file names are not UTF-8'
+arch=('any')
+url="https://github.com/GXDE-OS/zipu"
+license=('AGPL-3.0-only')
+# 脚本还导入 chardet ・ The script also imports chardet.
+depends=('python' 'python-chardet')
+makedepends=('git')
+provides=('zipu')
+conflicts=('zipu')
+source=()
+sha512sums=()
+
+# 直接使用 PKGBUILD 所在的 git 仓库作为源码 ・ Build from the git checkout this PKGBUILD lives in.
+_srcroot() {
+  git -C "$startdir" rev-parse --show-toplevel
+}
+
+package() {
+  # 与 debian/install 相同，src/ 即为安装根目录 ・ Same as debian/install, src/ is the install root.
+  cp -r --no-preserve=ownership "$(_srcroot)/src/." "$pkgdir/"
+}
