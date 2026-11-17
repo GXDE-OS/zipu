@@ -1,5 +1,5 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=zipu-git
+pkgname=zipu
 pkgver=1.0.0
 pkgrel=1
 pkgdesc='Extract ZIP archives whose file names are not UTF-8'
@@ -9,8 +9,9 @@ license=('AGPL-3.0-only')
 # 脚本还导入 chardet ・ The script also imports chardet.
 depends=('python' 'python-chardet')
 makedepends=('git')
-provides=('zipu')
-conflicts=('zipu')
+provides=("zipu-git=$pkgver")
+conflicts=('zipu-git')
+replaces=('zipu-git')
 source=()
 sha512sums=()
 
